@@ -1,0 +1,24 @@
+# ⚠️ أسرار — لا تُرفع أبدًا (يحتوي على كلمة مرور تطبيق Gmail)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# قاعدة البيانات المحلية والبيانات
+*.db
+*.sqlite
+*.sqlite3
+backend/data/*
+!backend/data/.gitkeep
+
+# نظام التشغيل والمحررات
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

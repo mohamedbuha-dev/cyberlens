@@ -1,0 +1,13 @@
+From: "Delivery Service" <info@delivery-updates-parcel.com>
+To: you@example.com
+Subject: Action required: confirm your delivery
+MIME-Version: 1.0
+Content-Type: text/html; charset="utf-8"
+
+<html><body>
+<p>Your package is on hold at our facility. Please act now to reschedule
+delivery — this is a limited time notice and applies within 24 hours.</p>
+<p>Track and reschedule here:
+<a href="https://bit.ly/track-pkg-9921">Reschedule delivery</a></p>
+<p>Delivery Support Team</p>
+</body></html>

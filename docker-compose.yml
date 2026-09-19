@@ -1,0 +1,42 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: cyberlens_backend
+    expose:
+      - "8000"
+    volumes:
+      - cyberlens_data:/app/data
+    environment:
+      - CYBERLENS_DATA_DIR=/app/data
+      # بوابة البريد (IMAP) — تُقرأ من ملف .env المجاور (انظر .env.example)
+      - IMAP_HOST=${IMAP_HOST:-}
+      - IMAP_PORT=${IMAP_PORT:-993}
+      - IMAP_USER=${IMAP_USER:-}
+      - IMAP_PASSWORD=${IMAP_PASSWORD:-}
+      - IMAP_MAILBOX=${IMAP_MAILBOX:-INBOX}
+      - IMAP_POLL_INTERVAL=${IMAP_POLL_INTERVAL:-20}
+      - IMAP_MARK_SEEN=${IMAP_MARK_SEEN:-true}
+    restart: unless-stopped
+    networks:
+      - cyberlens_net
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: cyberlens_frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - cyberlens_net
+
+networks:
+  cyberlens_net:
+    driver: bridge
+
+volumes:
+  cyberlens_data:
