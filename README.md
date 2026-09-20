@@ -67,7 +67,7 @@ IMAP ──►│  │ بوابة البريد     │  │                 ▲
 ### 1) استنساخ المشروع
 
 ```bash
-git clone https://github.com/<username>/cyberlens.git
+git clone https://github.com/mohamedbuha-dev/cyberlens.git
 cd cyberlens
 ```
 
